@@ -62,6 +62,7 @@ const bookSchema = new Schema({
 const userSchema = new Schema({
     userName: {
         type: String,
+        unique: true,
         require: true,
         validate(value){
             if(!validator.isEmail(value))
