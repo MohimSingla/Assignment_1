@@ -88,7 +88,18 @@ const userSchema = new Schema({
                 throw new Error("Warning! Password must be atleast 6 characters long!");
             }
         }
-    }
+    },
+    roleName: {
+     type: String,
+     trim: true,
+     require: true,
+     validate(value) {
+         if(value != "customer" || value != "admin")
+         {
+             throw new Error("'RoleName' of a user can either be a 'customer' or an 'admin'. (Case Sensitive)" );
+         }
+     }
+    },
 });
 
 userSchema.pre('save', async function (next) {
