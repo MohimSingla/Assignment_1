@@ -1,12 +1,15 @@
 const mongoose = require('mongoose');
 const { Schema } = require('mongoose');
 const validator = require('validator');
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 mongoose.connect('mongodb://localhost:27017/BookStore');
 
 const bookSchema = new Schema({
    title: {
     type: String,
+    trim: true,
     require: true,
     validate(value) {
         if(validator.isEmpty(value, { ignore_whitespace: true }))
@@ -17,6 +20,7 @@ const bookSchema = new Schema({
    },
    author: {
     type: String,
+    trim: true,
     require: true,
     validate(value) {
         if(validator.isEmpty(value, { ignore_whitespace: true }))
@@ -27,6 +31,7 @@ const bookSchema = new Schema({
    },
    genre: {
     type: String,
+    trim: true,
     require: true,
     validate(value) {
         if(validator.isEmpty(value, { ignore_whitespace: true }))
@@ -62,7 +67,9 @@ const bookSchema = new Schema({
 const userSchema = new Schema({
     userName: {
         type: String,
+        trim: true,
         unique: true,
+        lowercase: true,
         require: true,
         validate(value){
             if(!validator.isEmail(value))
@@ -73,6 +80,7 @@ const userSchema = new Schema({
     },
     password: {
         type: String, 
+        trim: true,
         require: true,
         validate(value){
             if(value.length < 6)
@@ -83,6 +91,31 @@ const userSchema = new Schema({
     }
 });
 
+userSchema.pre('save', async function (next) {
+    const user = this
+
+    if (user.isModified('password')) {
+        user.password = await bcrypt.hash(user.password, 8)
+    }
+
+    next()
+})
+
+userSchema.statics.findByCredentials = async (userName, password) => {
+    const currentUser = await User.findOne({ userName });
+
+    if (!currentUser) {
+        throw new Error('Invalid Username. Unable to Login!');
+    }
+
+    const flagPassword = await bcrypt.compare(password, currentUser.password);
+
+    if (!flagPassword) {
+        throw new Error('Warning! Username-Password mismatch. Unable to Login!');
+    }
+
+    return currentUser;
+}
 
 const User = mongoose.model('users', userSchema);
 const Book = mongoose.model('Books', bookSchema);
@@ -90,15 +123,15 @@ const Book = mongoose.model('Books', bookSchema);
 module.exports = {User, Book};
 
 
-// const tempUser = new user({
-//     userName: "temp",
-//     password: "dwd"
+// const tempUser = new User({
+//     userName: "temp@gmail.com",
+//     password: "dwdghj"
 // })
 
 // tempUser.save();
 
 
-// const temp = new book({
+// const temp = new Book({
 //     title: 2,
 //     author: "b",
 //     genre:"c",

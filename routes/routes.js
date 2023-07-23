@@ -1,9 +1,15 @@
 const express = require('express');
+const { User } = require('../models/model.js')
 
 const router = new express.Router();
 
-router.post('/auth/login', (req, res) => {
-    res.send("User Authentication")
+router.post('/auth/login', async (req, res) => {
+    try {
+        const user = await User.findByCredentials(req.body.userName, req.body.password);
+        res.send({ user });
+    } catch (e) {
+        res.status(400).send("Invalid Request!");
+    }
 })
 
 router.post('/books' , (req, res) => {
