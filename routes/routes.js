@@ -38,7 +38,7 @@ router.get('/books/:id', async (req, res) => {
     const _id = req.params.id;
     const bookData = await Book.findById(_id);
     if(!bookData){
-        throw new Error("Book with the requested ID not found.")
+        throw new Error("Book with the requested ID not found.");
     }
     res.send(bookData);
     }
@@ -47,8 +47,18 @@ router.get('/books/:id', async (req, res) => {
     }    
 })
 
-router.put('/books/:id', (req, res) => {
-    res.send("Update Function")
+router.put('/books/:id', async (req, res) => {
+    try{
+        const _id = req.params.id;
+        const updatedData = await Book.findOneAndUpdate({_id}, req.body, { runValidators: true, new: true });
+        if(!updatedData){
+            throw new Error("Book with the entered ID not found. Kindly try again with correct Information.");
+        }
+        res.send(updatedData);
+    }
+    catch(error){
+        res.status(500).send(error.message);
+    }
 })
 
 router.delete('/books/:id', async (req, res) => {
