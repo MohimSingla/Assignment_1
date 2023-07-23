@@ -94,12 +94,19 @@ const userSchema = new Schema({
      trim: true,
      require: true,
      validate(value) {
-         if(value != "customer" || value != "admin")
-         {
-             throw new Error("'RoleName' of a user can either be a 'customer' or an 'admin'. (Case Sensitive)" );
-         }
+        // console.log(typeof(value));
+        //  if(value.trim() != "customer".trim() || value != "admin")
+        //  {
+        //      throw new Error("'RoleName' of a user can either be a 'customer' or an 'admin'. (Case Sensitive)" );
+        //  }
      }
     },
+    tokens: [{
+        token: {
+            type: String,
+            required: true
+        }
+    }]
 });
 
 userSchema.pre('save', async function (next) {
@@ -128,6 +135,16 @@ userSchema.statics.findByCredentials = async (userName, password) => {
     return currentUser;
 }
 
+userSchema.methods.generateAuthToken = async function () {
+    const user = this;
+    const token = jwt.sign({ _id: user._id.toString(), roleName: user.roleName }, 'generateJsonToken');
+
+    user.tokens = user.tokens.concat({ token })
+    await user.save()
+
+    return token;
+}
+
 const User = mongoose.model('users', userSchema);
 const Book = mongoose.model('Books', bookSchema);
 
@@ -135,11 +152,12 @@ module.exports = {User, Book};
 
 
 // const tempUser = new User({
-//     userName: "temp@gmail.com",
-//     password: "dwdghj"
+//     userName: "customer4@gmail.com",
+//     password: "test123",
+//     roleName: 'customer'
 // })
 
-// tempUser.save();
+// tempUser.generateAuthToken();
 
 
 // const temp = new Book({

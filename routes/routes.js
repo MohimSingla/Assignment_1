@@ -1,5 +1,6 @@
 const express = require('express');
-const { User, Book } = require('../models/model.js')
+const { User, Book } = require('../models/model.js');
+const {adminAuth, checkUserLoginStatus} = require('../middleware/middleware.js');
 
 const router = new express.Router();
 
@@ -12,7 +13,7 @@ router.post('/auth/login', async (req, res) => {
     }
 })
 
-router.post('/books' , async (req, res) => {
+router.post('/books', adminAuth, async (req, res) => {
     try{
         const bookData = await new Book(req.body);
         await bookData.save();
@@ -23,7 +24,7 @@ router.post('/books' , async (req, res) => {
     }
 })
 
-router.get('/books', async (req, res) => {
+router.get('/books', checkUserLoginStatus,  async (req, res) => {
     try{
         const booksData = await Book.find();
         res.send(booksData);
@@ -33,7 +34,7 @@ router.get('/books', async (req, res) => {
     }
 })
 
-router.get('/books/:id', async (req, res) => {
+router.get('/books/:id', adminAuth, async (req, res) => {
     try{
     const _id = req.params.id;
     const bookData = await Book.findById(_id);
@@ -47,7 +48,7 @@ router.get('/books/:id', async (req, res) => {
     }    
 })
 
-router.put('/books/:id', async (req, res) => {
+router.put('/books/:id', adminAuth, async (req, res) => {
     try{
         const _id = req.params.id;
         const updatedData = await Book.findOneAndUpdate({_id}, req.body, { runValidators: true, new: true });
@@ -61,7 +62,7 @@ router.put('/books/:id', async (req, res) => {
     }
 })
 
-router.delete('/books/:id', async (req, res) => {
+router.delete('/books/:id', adminAuth, async (req, res) => {
     try{
         const _id = req.params.id;
         await Book.deleteOne({_id});
