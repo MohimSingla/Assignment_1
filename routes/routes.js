@@ -34,7 +34,7 @@ router.get('/books', checkUserLoginStatus,  async (req, res) => {
     }
 })
 
-router.get('/books/:id', adminAuth, async (req, res) => {
+router.get('/books/:id', checkUserLoginStatus, async (req, res) => {
     try{
     const _id = req.params.id;
     const bookData = await Book.findById(_id);
