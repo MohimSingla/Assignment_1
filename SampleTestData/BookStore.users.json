@@ -1,0 +1,153 @@
+[{
+  "_id": {
+    "$oid": "64bd6e851a09ebd3f24e4ee6"
+  },
+  "userName": "admin@admin.com",
+  "password": "$2a$08$LTxDXI/cEhlrAT0SzgFpveqLGw/zAOZMWhAhQsx16AuMUWWdb3kee",
+  "roleName": "admin",
+  "tokens": [
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGJkNmU4NTFhMDllYmQzZjI0ZTRlZTYiLCJyb2xlTmFtZSI6ImFkbWluIiwiaWF0IjoxNjkwMTM2MTk3fQ.npl487oxmh1hlsgwCwYSKkHLZc-ukothwpHW5TjvZAk",
+      "_id": {
+        "$oid": "64bd6e851a09ebd3f24e4ee7"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64bd70937a993fb4920b2baa"
+  },
+  "userName": "customer1@gmail.com",
+  "password": "$2a$08$qxSXRrK51wB/dZCjTqco..OZSiL/0EgqvcHEc2tv7BK.GFvpWJdCK",
+  "roleName": "customer",
+  "tokens": [
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGJkNzA5MzdhOTkzZmI0OTIwYjJiYWEiLCJyb2xlTmFtZSI6ImN1c3RvbWVyIiwiaWF0IjoxNjkwMTM2NzIzfQ.VBKDikZ90_LcUuhMi1URVygB89NpxSRb7n50IYiPVak",
+      "_id": {
+        "$oid": "64bd70937a993fb4920b2bab"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64bd70a78c791d9e610c9335"
+  },
+  "userName": "customer2@gmail.com",
+  "password": "$2a$08$OmCit0flO5qCgaNcx.L0wuKkz1WqVJ7LfjpR90PE2hpkulhrSgT4i",
+  "roleName": "customer",
+  "tokens": [
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGJkNzBhNzhjNzkxZDllNjEwYzkzMzUiLCJyb2xlTmFtZSI6ImN1c3RvbWVyIiwiaWF0IjoxNjkwMTM2NzQzfQ.rJ3KpafuBHf8z28n3G_Ja6bfqAM7aL79OB4pkOaPuDQ",
+      "_id": {
+        "$oid": "64bd70a78c791d9e610c9336"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64bd70aaa78ea82e3a19e5f7"
+  },
+  "userName": "customer3@gmail.com",
+  "password": "$2a$08$VVNxqHVfe7V8FXfHwiBomucn7Jjbp0JipJ46Mq8Y8BZZBMhDq26xK",
+  "roleName": "customer",
+  "tokens": [
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGJkNzBhYWE3OGVhODJlM2ExOWU1ZjciLCJyb2xlTmFtZSI6ImN1c3RvbWVyIiwiaWF0IjoxNjkwMTM2NzQ2fQ.J9y9XLTKJfIgMihoFHW1AYHUpkW4TflEZDmoCWslewc",
+      "_id": {
+        "$oid": "64bd70aaa78ea82e3a19e5f8"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64bd70ac614b5f9bfc1da19d"
+  },
+  "userName": "customer4@gmail.com",
+  "password": "$2a$08$FUA1nSgT9N4xBDY0WPSgYeN4Uh6/SfATF21vBcdNZDFPB0/C5nY1W",
+  "roleName": "customer",
+  "tokens": [
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGJkNzBhYzYxNGI1ZjliZmMxZGExOWQiLCJyb2xlTmFtZSI6ImN1c3RvbWVyIiwiaWF0IjoxNjkwMTM2NzQ4fQ.NHsMNmbug19f6chhsMT9P65qA68DduKZqkj-LDYTVtE",
+      "_id": {
+        "$oid": "64bd70ac614b5f9bfc1da19e"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64be2aadb16c7e017763a1da"
+  },
+  "userName": "customer5@gmail.com",
+  "password": "$2a$08$ShYDPi3qlnTVIGaX5cFEgurWmWj0rIUyyx2jIVGvYpl3ZqLSWuUhS",
+  "roleName": "customer",
+  "tokens": [
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGJlMmFhZGIxNmM3ZTAxNzc2M2ExZGEiLCJyb2xlTmFtZSI6ImN1c3RvbWVyIiwiaWF0IjoxNjkwMTg0MzY1fQ.1oaCigTf1vL21dgexNJ5lR2OitVTgw9H34d17us75SQ",
+      "_id": {
+        "$oid": "64be2aadb16c7e017763a1db"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64be2b7bb5186a50c71c237d"
+  },
+  "userName": "customer6@gmail.com",
+  "password": "$2a$08$nbnFvUDKH66wDlC.gfw4Se0cY77K50aGJ837fKa5GxPAyKIJHeWQK",
+  "roleName": "customer",
+  "tokens": [
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGJlMmI3YmI1MTg2YTUwYzcxYzIzN2QiLCJyb2xlTmFtZSI6ImN1c3RvbWVyIiwiaWF0IjoxNjkwMTg0NTcxfQ.y1tRM8MihPU-4CEXswm_bTPzcy2djKXmBB9mwFE74YE",
+      "_id": {
+        "$oid": "64be2b7bb5186a50c71c237e"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64be2baa649070bc23f96e07"
+  },
+  "userName": "customer7@gmail.com",
+  "password": "$2a$08$KA7VCjtbB38158yOmQ8qKeRYtqYP.p9nTGqGbdAOJZ6TbdIebntAC",
+  "roleName": "customer",
+  "tokens": [
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGJlMmJhYTY0OTA3MGJjMjNmOTZlMDciLCJyb2xlTmFtZSI6ImN1c3RvbWVyIiwiaWF0IjoxNjkwMTg0NjE4fQ.-MACoEO1S3nz98Xsjuss7s8oOM_NsYs57_Tjwc1jGHg",
+      "_id": {
+        "$oid": "64be2baa649070bc23f96e08"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64be2c13944ec00ebe19acf8"
+  },
+  "userName": "customer8@gmail.com",
+  "password": "$2a$08$9kq0O2y.0ZwL0T50/osZxO.BLJ30ijQv.LyUJ.yxD5X7SNOiNIIBe",
+  "roleName": "customer",
+  "tokens": [
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGJlMmMxMzk0NGVjMDBlYmUxOWFjZjgiLCJyb2xlTmFtZSI6ImN1c3RvbWVyIiwiaWF0IjoxNjkwMTg0NzIzfQ.XjHddnkEikipoFTaZHJA6N2qKIvkAVENKsOTxC3ILHs",
+      "_id": {
+        "$oid": "64be2c13944ec00ebe19acf9"
+      }
+    }
+  ],
+  "__v": 0
+}]

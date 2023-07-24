@@ -1,0 +1,110 @@
+[{
+  "_id": {
+    "$oid": "64be0b140b111994727fd5a5"
+  },
+  "title": "1984",
+  "author": "George Orwell",
+  "genre": "Classic",
+  "price": 88,
+  "stock": 6,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64be0b30b00a5445c3de232e"
+  },
+  "title": "One Indian Girl",
+  "author": "Chetan Bhagat",
+  "genre": "Fiction",
+  "price": 120,
+  "stock": 23,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64be0b4a26721a6b0efe6cae"
+  },
+  "title": "Little Women",
+  "author": "Louisa May Alcott",
+  "genre": "Classic",
+  "price": 119,
+  "stock": 11,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64be0b5ca1bcb8c527ceb195"
+  },
+  "title": "Jane Eyre",
+  "author": "Charlotte Brontte",
+  "genre": "Classic",
+  "price": 110,
+  "stock": 3,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64be0b7fb30e39b9b5109d95"
+  },
+  "title": "Sense and Sensibility",
+  "author": "Jane Austen",
+  "genre": "Classic",
+  "price": 99,
+  "stock": 14,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64be19d50d4191f442d042b9"
+  },
+  "title": "Pride and Prejudice",
+  "author": "Jane Austen",
+  "genre": "Classic",
+  "price": 199,
+  "stock": 6,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64be19e9e75ab677bc9ddc1b"
+  },
+  "title": "Emma",
+  "author": "Jane Austen",
+  "genre": "Classic",
+  "price": 156,
+  "stock": 12,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64be1d6c1962d86659b54f96"
+  },
+  "title": "Life is what you make it",
+  "author": "Preeti Shenoy",
+  "genre": "Fiction",
+  "price": 177,
+  "stock": 17,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64be1d941962d86659b54f98"
+  },
+  "title": "Kafka on the Shore",
+  "author": "Murakami",
+  "genre": "Fiction",
+  "price": 177,
+  "stock": 10,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64be1dba1962d86659b54f9a"
+  },
+  "title": "Animal Farm",
+  "author": "George Orwell",
+  "genre": "Classic",
+  "price": 177,
+  "stock": 17,
+  "__v": 0
+}]
