@@ -4,6 +4,19 @@ const {adminAuth, checkUserLoginStatus} = require('../middleware/middleware.js')
 
 const router = new express.Router();
 
+// Route at POST to create new user accounts.
+// Validators in place to check quality of the data entered.
+router.post('/auth/register', async (req, res) => {
+    try{
+        const userData = new User(req.body);
+        await userData.generateAuthToken();
+        res.status(200).send("User Created SuccessFully!");
+    }
+    catch(error){
+        res.status(500).send(error.message);
+    }
+})
+
 // Route at POST "/auth/login" allows the user to login with correct Username(Email) and password.
 // Throws 400 http status in case of mismatching credentials.
 router.post('/auth/login', async (req, res) => {
