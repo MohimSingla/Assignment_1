@@ -61,7 +61,48 @@ Note:
 1. This API call returns the books data in paginated form. With current page number and total pages available. 
 2. The user can pass the page number as params: Adding Key as "page" and it's value as an integer to the page number which user wants to vie.
 3. This by default opens the first page and lists only 2 books per page.
+Alternatively, Send an API GET request to :
+        http://127.0.0.1:3000/books/?page=<Integer value of Page Number>
 
+#### 4. GET /books/:id
+This API Endpoint allows users to view one specific book data.
+To Fetch the book data hit an API GET call at http://127.0.0.1:3000/books/<ID> , where <ID> is the book's Id stored in the database.
+Add any user's JSON Web Token accessible into the database in the header with "AuthorizationToken" as key and value as: "Bearer <JWT>"
 
+#### 5. POST /books
+This API Endpoint allows ADMIN users to CREATE new Book data individually.
+To Fetch the books data hit an API POST call at http://127.0.0.1:3000/books
+Add only the Admin user's JSON Web Token accessible into the database in the header with "AuthorizationToken" as key and value as: "Bearer <JWT>"
+Add Book data as raw JSON object into the body of the request on postman. For Example:
 
-
+                        {
+                            "title": "Animal Farm",
+                            "author": "George Orwell",
+                            "genre":"Classic",
+                            "price": 177,
+                            "stock": 17
+                        }
+Note:
+1. Data validators are at place, Any incorrect data format would throw an error.
+2. If customer user tries to access this API, he/she is greeted with an Authorization Error.
+   
+#### 6. PUT /books/:id
+This API Endpoint allows ADMIN users to UPDATE existing Book's data with the entered ID.
+To UPDATE the book's data hit an API PUT call at http://127.0.0.1:3000/books/<ID>, where <ID> is the book's document ID stored into the Books database.
+Add only the Admin user's JSON Web Token accessible into the database in the header with "AuthorizationToken" as key and value as: "Bearer <JWT>"
+Add Book data as raw JSON object into the body of the request on postman. For Example:
+                                {
+                                    "author": "new Author"
+                                }
+This will update the author of book data with _id -> <ID> into the mongoDB database collection.
+Note:
+1. Data validators are at place, Any incorrect data format would throw an error.
+2. If customer user tries to access this API, he/she is greeted with an Authorization Error.
+   
+#### 7. DELETE /books/:id
+This API allows ADMIN users to perform DELETE operation on the books data.
+To DELETE the book's data hit an API DELETE call at http://127.0.0.1:3000/books/<ID>, where <ID> is the book's document ID stored into the Books database.
+Add only the Admin user's JSON Web Token accessible into the database in the header with "AuthorizationToken" as key and value as: "Bearer <JWT>"
+Note:
+1. If customer user tries to access this API, he/she is greeted with an Authorization Error.
+ 
