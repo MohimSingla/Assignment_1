@@ -91,8 +91,10 @@ This API Endpoint allows ADMIN users to UPDATE existing Book's data with the ent
 To UPDATE the book's data hit an API PUT call at http://127.0.0.1:3000/books/<ID>, where <ID> is the book's document ID stored into the Books database.
 Add only the Admin user's JSON Web Token accessible into the database in the header with "AuthorizationToken" as key and value as: "Bearer <JWT>"
 Add Book data as raw JSON object into the body of the request on postman. For Example:
+
                                 {
-                                    "author": "new Author"
+                                    "author": "new Author",
+                                    "genre": "new genre"
                                 }
 This will update the author of book data with _id -> <ID> into the mongoDB database collection.
 Note:
