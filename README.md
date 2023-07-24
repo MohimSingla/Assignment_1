@@ -1,6 +1,6 @@
 # Book-Store-API
 
-##Overview:
+## Overview:
 Book Store API is an application which allows customers and admins to register themselves, Login with their accounts and perform CRUD operations based upon their roles.
 
 ## Functionalities:
