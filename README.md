@@ -108,7 +108,13 @@ Add only the Admin user's JSON Web Token accessible into the database in the hea
 Note:
 1. If customer user tries to access this API, he/she is greeted with an Authorization Error.
  
+## Error Handling and Validation:
+Error handlers and validators are in place to check for any incorrect/wrong information being passed into the application.
 
+## Documentation:
+Code-base is well documented with comments. 
+Every functionality of the implemented functions is well written into the source code.
 
 ## Note:
 In case the express server crashes, Kindly restart the express server with nodemon command.
+
