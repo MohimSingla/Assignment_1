@@ -62,7 +62,7 @@ Note:
 2. The user can pass the page number as params: Adding Key as "page" and it's value as an integer to the page number which user wants to vie.
 3. This by default opens the first page and lists only 2 books per page.
 Alternatively, Send an API GET request to :
-        http://127.0.0.1:3000/books/?page=<Integer value of Page Number>
+        "http://127.0.0.1:3000/books/?page=<Integer value of Page Number>"
 
 #### 4. GET /books/:id
 This API Endpoint allows users to view one specific book data.
