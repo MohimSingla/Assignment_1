@@ -100,7 +100,6 @@ const userSchema = new Schema({
      trim: true,
      require: true,
      validate(value) {
-        // console.log(typeof(value));
         //  if(value.trim() != "customer".trim() || value != "admin")
         //  {
         //      throw new Error("'RoleName' of a user can either be a 'customer' or an 'admin'. (Case Sensitive)" );

@@ -51,7 +51,6 @@ router.get('/books', checkUserLoginStatus,  async (req, res) => {
         res.send({booksData, "Page Number": page + 1, "Total Pages": pageCount});
     }
     catch(error){
-        console.log(error.message)
         res.status(404).send("Invalid Request => " + error.message);
     }
 })
