@@ -100,10 +100,10 @@ const userSchema = new Schema({
      trim: true,
      require: true,
      validate(value) {
-        //  if(value.trim() != "customer".trim() || value != "admin")
-        //  {
-        //      throw new Error("'RoleName' of a user can either be a 'customer' or an 'admin'. (Case Sensitive)" );
-        //  }
+         if(value !== "customer" && value !== "admin")
+         {
+             throw new Error("'RoleName' of a user can either be a 'customer' or an 'admin'. (Case Sensitive)" );
+         }
      }
     },
     tokens: [{
@@ -152,7 +152,7 @@ userSchema.methods.generateAuthToken = async function () {
 
     user.tokens = user.tokens.concat({ token });
     await user.save();
-    
+
 }
 
 const User = mongoose.model('users', userSchema);
