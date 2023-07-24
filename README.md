@@ -18,8 +18,37 @@ Book Store API is an application which allows customers and admins to register t
 1. Clone the repository into your local machine by using the command:
         git clone https://github.com/MohimSingla/Assignment_1.git
 2. Make sure you have a running MongoDB database server on your local machine at localhost and IP: 27017. If the MongoDB server is at some other IP and PORT, Kindly update the same in Models/model.js line number 8.
-3. Change your PWD to the root folder of your project in the terminal and run the following command to start the express server:
+3. Make sure PORT 3000 is available for our application.
+4. Change your PWD to the root folder of your project in the terminal and run the following command to start the express server:
         nodemon src/app.js -e js
-4. The express server is up and running.
+5. The express server is up and running.
 
 ## Testing Endpoints:
+#### 1. POST /auth/register
+This API call allows user to signup for our application.
+To register a new user, go to postman and setup a post request to http://127.0.0.1:3000/auth/register
+Enter the data in the body as a raw JSON object. For Example:
+                        {
+                            "userName": "customer8@gmail.com",
+                            "password": "test123",
+                            "roleName": "customer"
+                        }
+Note: 
+1. All the fields are required and needs to be entered. In case of wrong/incorrect information the validator will throw an error to the user.
+2. userName should be an unique Email Id. Which has not been used before.
+3. Password is encrypted using Bcrypt and stored as a hashed password into the database.
+4. Rolename could only be "customer" or "admin", anything other than that would throw an error.
+5. It generates a JWT token which can be used later as Bearer Token to perform CRUD operations on the Books database.
+
+#### 2. POST /auth/login
+This api call allows users to login to the application using their username and password.
+To register a new user, go to postman and setup a post request to http://127.0.0.1:3000/auth/login
+Enter the data in the body as a raw JSON object. For Example:
+                        {
+                            "userName": "customer8@gmail.com",
+                            "password": "test123"
+                        }
+Note:
+1. This API will find if the user with userName entered exists in the database.
+2. If the user exists, It will compare the password entered by the user with the hashed password saved by decrypting the hashed password.
+3. In case of any anomality, it will throw error to the user with respective error message.
