@@ -21,7 +21,10 @@ Book Store API is an application which allows customers and admins to register t
 3. Make sure PORT 3000 is available for our application.      
 4. Change your PWD to the root folder of your project in the terminal and run the following command to start the express server:        
                         nodemon src/app.js -e js     
-5. The express server is up and running.     
+5. The express server is up and running.
+
+### Note:
+1. For Sample test database collection data, refer to /sampleTestData and check the ample files.
 
 ## Testing Endpoints:
 #### 1. POST /auth/register
@@ -118,5 +121,5 @@ Code-base is well documented with comments.
 Every functionality of the implemented functions is well written into the source code.
 
 ## Note:
-In case the express server crashes, Kindly restart the express server with nodemon command.
+1. In case the express server crashes, Kindly restart the express server with nodemon command.
 
