@@ -42,7 +42,7 @@ Note:
 
 #### 2. POST /auth/login
 This api call allows users to login to the application using their username and password.
-To register a new user, go to postman and setup a post request to http://127.0.0.1:3000/auth/login
+To register a new user, go to postman and setup a POST request to http://127.0.0.1:3000/auth/login
 Enter the data in the body as a raw JSON object. For Example:
                         {
                             "userName": "customer8@gmail.com",
@@ -52,3 +52,16 @@ Note:
 1. This API will find if the user with userName entered exists in the database.
 2. If the user exists, It will compare the password entered by the user with the hashed password saved by decrypting the hashed password.
 3. In case of any anomality, it will throw error to the user with respective error message.
+
+#### 3. GET /books
+This API fetches the books data which has been stored by the admin user.
+To Fetch the books data hit an API GET call at http://127.0.0.1:3000/books
+Add any user's JSON Web Token accessible into the database in the header with "AuthorizationToken" as key and value as: "Bearer <JWT>"
+Note:
+1. This API call returns the books data in paginated form. With current page number and total pages available. 
+2. The user can pass the page number as params: Adding Key as "page" and it's value as an integer to the page number which user wants to vie.
+3. This by default opens the first page and lists only 2 books per page.
+
+
+
+
