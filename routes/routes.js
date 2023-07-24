@@ -30,14 +30,19 @@ router.post('/books', adminAuth, async (req, res) => {
 
 // Route at GET "/books" allows any Loged In user to view the listed books data.
 // If a user with invalid/no_JWT tries to access the data, he/she is not allowed and served with an error.
+// Pagination Applied: User need to send query parameter of page to access the page number.
+// Data sent in ascending order, sorted by title.
+// If page number requested by user exceeds maximum page limit: Throws an error : "No Book Data Found"
 router.get('/books', checkUserLoginStatus,  async (req, res) => {
+    const limit =2;
+    let page = req.query.page || 0;
     try{
-        const booksData = await Book.find();
+        const booksData = await Book.find().sort({title: 'asc'}).limit(limit).skip(limit*page);
         if(!booksData.length)
         {
             res.send("No book data found.");
         }
-        res.send(booksData);
+        res.send({booksData, "Page Number": page});
     }
     catch(error){
         res.status(404).send("Invalid Request");

@@ -9,7 +9,7 @@ mongoose.connect('mongodb://localhost:27017/BookStore');
 
 // Book Schema to define the structor of the Book's data.
 // Fields include: title, author, genre, price and stock.
-// Corresponding validators are applied to check the quality of data that gets stored in the database.
+// Corresponding validators by using validator library are applied to check the quality of data that gets stored in the database.
 const bookSchema = new Schema({
    title: {
     type: String,
@@ -176,10 +176,10 @@ module.exports = {User, Book};
 
 //Skeleton to create the book entry (For testing Purposes ONLY)
 // const temp = new Book({
-//     title: 2,
-//     author: "b",
-//     genre:"c",
-//     price: 8,
+//     title: "Sense and Sensibility",
+//     author: "Jane Austen",
+//     genre:"Classic",
+//     price: 99,
 //     stock: 3
 // });
 

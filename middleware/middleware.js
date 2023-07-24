@@ -27,7 +27,7 @@ const checkUserLoginStatus = async (req, res, next) => {
         }
         const token = req.header('AuthorizationToken').replace('Bearer ', '');
         const flagToken = await jwt.verify(token, "generateJsonToken");
-        if(flagToken) {
+        if(!flagToken) {
             throw new Error("Unauthorized Request. Kidly Login first.");
         }
         next();
