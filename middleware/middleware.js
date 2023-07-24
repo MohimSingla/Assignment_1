@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 
+// Middleware function to check wheather the acoount triing the access the API end points is a valid ADMIN account or not.
 const adminAuth = async (req, res, next) => {
     try{
         if(!req.header('AuthorizationToken')){
@@ -17,6 +18,8 @@ const adminAuth = async (req, res, next) => {
     }
 }
 
+// Middleware function to flag the Unauthorized access to API endpoints. 
+// User cannot access the end points without the login JSON Web Token.
 const checkUserLoginStatus = async (req, res, next) => {
     try{
         if(!req.header('AuthorizationToken')){

@@ -4,6 +4,8 @@ const {adminAuth, checkUserLoginStatus} = require('../middleware/middleware.js')
 
 const router = new express.Router();
 
+// Route at POST "/auth/login" allows the user to login with correct Username(Email) and password.
+// Throws 400 http status in case of mismatching credentials.
 router.post('/auth/login', async (req, res) => {
     try {
         const user = await User.findByCredentials(req.body.userName, req.body.password);
@@ -13,6 +15,8 @@ router.post('/auth/login', async (req, res) => {
     }
 })
 
+// Route at POST "/books" allows only the ADMIN user account to create book entries.
+// If any "customer" account tries to access the endpoint, it throws an error.
 router.post('/books', adminAuth, async (req, res) => {
     try{
         const bookData = await new Book(req.body);
@@ -24,9 +28,15 @@ router.post('/books', adminAuth, async (req, res) => {
     }
 })
 
+// Route at GET "/books" allows any Loged In user to view the listed books data.
+// If a user with invalid/no_JWT tries to access the data, he/she is not allowed and served with an error.
 router.get('/books', checkUserLoginStatus,  async (req, res) => {
     try{
         const booksData = await Book.find();
+        if(!booksData.length)
+        {
+            res.send("No book data found.");
+        }
         res.send(booksData);
     }
     catch(error){
@@ -34,6 +44,8 @@ router.get('/books', checkUserLoginStatus,  async (req, res) => {
     }
 })
 
+// Route at GET "/books/:id" allows any Loged In user to view the book data with the requested ID.
+// If a user with invalid/no_JWT tries to access the data, he/she is not allowed and served with an error.
 router.get('/books/:id', checkUserLoginStatus, async (req, res) => {
     try{
     const _id = req.params.id;
@@ -48,6 +60,7 @@ router.get('/books/:id', checkUserLoginStatus, async (req, res) => {
     }    
 })
 
+// Route at PUT "/books/:id" allows only the ADMIN user to update book data with the requested ID.
 router.put('/books/:id', adminAuth, async (req, res) => {
     try{
         const _id = req.params.id;
@@ -62,6 +75,7 @@ router.put('/books/:id', adminAuth, async (req, res) => {
     }
 })
 
+// Route at DELETE "/books/:id" allows only the ADMIN user to delete book data completely from the data base with the requested ID.
 router.delete('/books/:id', adminAuth, async (req, res) => {
     try{
         const _id = req.params.id;
