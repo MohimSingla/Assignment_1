@@ -1,14 +1,14 @@
-### Book-Store-API
+# Book-Store-API
 
 ##Overview:
 Book Store API is an application which allows customers and admins to register themselves, Login with their accounts and perform CRUD operations based upon their roles.
 
 ## Functionalities:
 
-# Accessible by customer:
+### Accessible by customer:
 1. Logged In Customers can view a paginated list of books data stored by the admin.
 
-# Accessible by Admins:
+### Accessible by Admins:
 1. Logged In Admin user can CREATE a new book's data.
 2. Logged In Admin user can UPDATE a book's data with specific document ID.
 3. Logged In Admin user can DELETE any book's data with the specific document ID.
