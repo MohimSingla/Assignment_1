@@ -44,6 +44,7 @@ Note:
 This api call allows users to login to the application using their username and password.
 To register a new user, go to postman and setup a POST request to http://127.0.0.1:3000/auth/login
 Enter the data in the body as a raw JSON object. For Example:
+
                         {
                             "userName": "customer8@gmail.com",
                             "password": "test123"
