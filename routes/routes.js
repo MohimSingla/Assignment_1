@@ -1,6 +1,7 @@
 const express = require('express');
 const { User, Book } = require('../models/model.js');
 const {adminAuth, checkUserLoginStatus} = require('../middleware/middleware.js');
+const {joiSchemaBooksValidator, joiSchemaUserValidator} = require('../validators/joiValidator.js')
 
 const router = new express.Router();
 
@@ -8,6 +9,11 @@ const router = new express.Router();
 // Validators in place to check quality of the data entered.
 router.post('/auth/register', async (req, res) => {
     try{
+        const errCheck = joiSchemaUserValidator.validate(req.body).error;
+        if(errCheck)
+        {
+            throw new Error(errCheck);
+        }
         const userData = new User(req.body);
         await userData.generateAuthToken();
         res.status(200).send("User Created SuccessFully!");
@@ -32,6 +38,10 @@ router.post('/auth/login', async (req, res) => {
 // If any "customer" account tries to access the endpoint, it throws an error.
 router.post('/books', adminAuth, async (req, res) => {
     try{
+        const errCheck = joiSchemaBooksValidator.validate(req.body).error;
+        if(errCheck) {
+            throw new Error(errCheck);
+        };
         const bookData = await new Book(req.body);
         await bookData.save();
         res.send("Book data saved successfully.");
