@@ -176,11 +176,11 @@ module.exports = {User, Book};
 
 //Skeleton to create the book entry (For testing Purposes ONLY)
 // const temp = new Book({
-//     title: "Sense and Sensibility",
+//     title: "Emma",
 //     author: "Jane Austen",
 //     genre:"Classic",
-//     price: 99,
-//     stock: 3
+//     price: 156,
+//     stock: 12
 // });
 
 // temp.save();

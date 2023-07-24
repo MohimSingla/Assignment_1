@@ -35,16 +35,18 @@ router.post('/books', adminAuth, async (req, res) => {
 // If page number requested by user exceeds maximum page limit: Throws an error : "No Book Data Found"
 router.get('/books', checkUserLoginStatus,  async (req, res) => {
     const limit =2;
-    let page = req.query.page || 0;
+    let page = Number(req.query.page) - 1 || 0;
     try{
         const booksData = await Book.find().sort({title: 'asc'}).limit(limit).skip(limit*page);
+        var pageCount = (await Book.countDocuments({}) + 1)/limit;
         if(!booksData.length)
         {
-            res.send("No book data found.");
+            res.send("No books data found.");
         }
-        res.send({booksData, "Page Number": page});
+        res.send({booksData, "Page Number": page, "Total Pages": pageCount});
     }
     catch(error){
+        console.log(error.message)
         res.status(404).send("Invalid Request");
     }
 })
