@@ -38,7 +38,7 @@ router.get('/books', checkUserLoginStatus,  async (req, res) => {
     const limit =2;
     let page = Number(req.query.page) - 1 || 0;
     try{
-        const pageCount = (await Book.countDocuments({}) + 1)/limit;
+        const pageCount = Math.floor((await Book.countDocuments({}) + 1)/limit);
         if(pageCount < page + 1 )
         {
             throw new Error("Total number of pages currently are: " + pageCount + ". Kindly access any page number lower than that.")
