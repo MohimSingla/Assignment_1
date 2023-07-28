@@ -103,12 +103,12 @@ const buyBook = async (req, res) => {
         {
             throw new Error("Requested Book is currently out of stock.");
         }
-        const updatedData = await Book.findOneAndUpdate({_id}, {stock: bookData.stock - 1}, { new: true });
         req.body.amount = bookData.price;
         const paymentData = await got.post('https://stoplight.io/mocks/skeps/book-store:master/12094368/misc/payment/process', {
             json: req.body,
             responseType: 'json'
 	    });
+        const updatedData = await Book.findOneAndUpdate({_id}, {stock: bookData.stock - 1}, { new: true });
         res.send(paymentData.body);
     }
     catch(error){
