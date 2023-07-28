@@ -3,7 +3,7 @@ const { User, Book } = require('../models/model.js');
 const {adminAuth, checkUserLoginStatus} = require('../middleware/middleware.js');
 const {joiSchemaBooksValidator, joiSchemaUserValidator} = require('../validators/joiValidator.js');
 const { registerUser, userLogin } = require('../controller/userController.js');
-const { getBooks, getBookWithId, saveBookData, updateBookData, deleteBookData } = require('../controller/booksController.js');
+const { getBooks, getBookWithId, saveBookData, updateBookData, deleteBookData, buyBook } = require('../controller/booksController.js');
 
 const router = new express.Router();
 
@@ -29,5 +29,8 @@ router.put('/books/:id', adminAuth, updateBookData)
 
 // Route at DELETE "/books/:id" allows only the ADMIN user to delete book data completely from the data base with the requested ID.
 router.delete('/books/:id', adminAuth, deleteBookData)
+
+// Route at GET "/buy/book/:id" allows loggedIn user to buy a book which is available in the inventory. 
+router.get('/buy/book/:id', checkUserLoginStatus, buyBook);
 
 module.exports = {router};

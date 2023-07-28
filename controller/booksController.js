@@ -1,5 +1,6 @@
 const { Book } = require('../models/model.js');
 const { joiSchemaBooksValidator } = require('../validators/joiValidator.js');
+const got = require('got');
 
 // Response handler which allows only the ADMIN user account to create book entries.
 // If any "customer" account tries to access the endpoint, it throws an error.
@@ -14,7 +15,7 @@ const saveBookData = async (req, res) => {
         res.send("Book data saved successfully.");
     }
     catch(error){
-        res.status(500).send(error.message);
+        res.status(400).send({error: error.message});
     }
 }
 
@@ -41,7 +42,7 @@ const getBooks = async (req, res) => {
         res.send({booksData, "Page Number": page + 1, "Total Pages": pageCount});
     }
     catch(error){
-        res.status(404).send("Invalid Request => " + error.message);
+        res.status(400).send({error: "Invalid Request => " + error.message});
     }
 };
 
@@ -58,7 +59,7 @@ const getBookWithId = async (req, res) => {
     res.send(bookData);
     }
     catch(error){  
-        res.status(404).send(error.message);
+        res.status(400).send({error: error.message});
     }    
 };
 
@@ -73,7 +74,7 @@ const updateBookData = async (req, res) => {
         res.send(updatedData);
     }
     catch(error){
-        res.status(500).send(error.message);
+        res.status(400).send({error: error.message});
     }
 };
 
@@ -85,8 +86,34 @@ const deleteBookData = async (req, res) => {
         res.send("Requested Book data deleted successfully.");
     }
     catch(error){
-        res.status(401).send("Unable to delete the requested book. Kindly verify the entered details or Please try again later if the error still persists!");
+        res.status(400).send({error: "Unable to delete the requested book. Kindly verify the entered details or Please try again later if the error still persists!"});
     }
 };
 
-module.exports = { getBooks, getBookWithId, saveBookData, updateBookData, deleteBookData }
+//Response handler which allows loggedin user to purchase a book.
+const buyBook = async (req, res) => {
+    try{
+        const _id = req.params.id;
+        const bookData = await Book.findById(_id);
+        if(!bookData)
+        {
+            throw new Error("No such book found.");
+        }
+        if(!bookData.stock)
+        {
+            throw new Error("Requested Book is currently out of stock.");
+        }
+        const updatedData = await Book.findOneAndUpdate({_id}, {stock: bookData.stock - 1}, { new: true });
+        req.body.amount = bookData.price;
+        const paymentData = await got.post('https://stoplight.io/mocks/skeps/book-store:master/12094368/misc/payment/process', {
+            json: req.body,
+            responseType: 'json'
+	    });
+        res.send(paymentData.body);
+    }
+    catch(error){
+        res.status(400).send({error: error.message});
+    }
+}
+
+module.exports = { getBooks, getBookWithId, saveBookData, updateBookData, deleteBookData, buyBook }
