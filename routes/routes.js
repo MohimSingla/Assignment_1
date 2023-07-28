@@ -31,6 +31,6 @@ router.put('/books/:id', adminAuth, updateBookData)
 router.delete('/books/:id', adminAuth, deleteBookData)
 
 // Route at GET "/buy/book/:id" allows loggedIn user to buy a book which is available in the inventory. 
-router.get('/buy/book/:id', checkUserLoginStatus, buyBook);
+router.post('/buy/book/:id', checkUserLoginStatus, buyBook);
 
 module.exports = {router};
