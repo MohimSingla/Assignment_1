@@ -1,0 +1,71 @@
+{"level":30,"time":1690784062908,"pid":97988,"hostname":"MacBook-Pro-3.local","msg":"Node server up and running."}
+[11:45:02.458] [32mINFO[39m (99371): [36mNode server up and running.[39m
+[11:45:04.033] [32mINFO[39m (99371): [36mPOST route /auth/register is accessed[39m
+[11:45:04.081] [41mFATAL[49m (99371): [36mE11000 duplicate key error collection: BookStore.users index: userName_1 dup key: { userName: "customer10@gmail.com" }[39m
+[11:45:04.535] [32mINFO[39m (99371): [36mSending 400 status code.[39m
+[11:45:04.539] [32mINFO[39m (99371): [36mrequest completed[39m
+    req: {
+      "id": 1,
+      "method": "POST",
+      "url": "/auth/register",
+      "query": {},
+      "params": {},
+      "headers": {
+        "content-type": "application/json",
+        "user-agent": "PostmanRuntime/7.32.3",
+        "accept": "*/*",
+        "postman-token": "873a5724-d959-44fc-9f8f-57036d0ae14e",
+        "host": "127.0.0.1:3000",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive",
+        "content-length": "94"
+      },
+      "remoteAddress": "::ffff:127.0.0.1",
+      "remotePort": 52553
+    }
+    res: {
+      "statusCode": 400,
+      "headers": {
+        "x-powered-by": "Express",
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "118",
+        "etag": "W/\"76-xOwGS1yEyXqItDMe1lfYCHw4w0k\""
+      }
+    }
+    responseTime: 516
+[11:45:20.054] [32mINFO[39m (120): [36mNode server up and running.[39m
+[11:45:21.099] [32mINFO[39m (120): [36mPOST route /auth/register is accessed[39m
+[11:45:21.146] [41mFATAL[49m (120): [36mE11000 duplicate key error collection: BookStore.users index: userName_1 dup key: { userName: "customer10@gmail.com" }[39m
+[11:45:22.126] [32mINFO[39m (120): [36mSending 400 status code.[39m
+[11:45:22.129] [32mINFO[39m (120): [36mrequest completed[39m
+    req: {
+      "id": 1,
+      "method": "POST",
+      "url": "/auth/register",
+      "query": {},
+      "params": {},
+      "headers": {
+        "content-type": "application/json",
+        "user-agent": "PostmanRuntime/7.32.3",
+        "accept": "*/*",
+        "postman-token": "b6a7e382-0fa4-4d78-bb76-9bba414e01d9",
+        "host": "127.0.0.1:3000",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive",
+        "content-length": "94"
+      },
+      "remoteAddress": "::ffff:127.0.0.1",
+      "remotePort": 52559
+    }
+    res: {
+      "statusCode": 400,
+      "headers": {
+        "x-powered-by": "Express",
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "118",
+        "etag": "W/\"76-xOwGS1yEyXqItDMe1lfYCHw4w0k\""
+      }
+    }
+    responseTime: 1040
+[11:45:35.812] [32mINFO[39m (1024): [36mNode server up and running.[39m
+[11:46:24.102] [32mINFO[39m (2748): [36mNode server up and running.[39m
