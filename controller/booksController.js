@@ -19,7 +19,7 @@ const saveBookData = async (req, res) => {
         res.send("Book data saved successfully.");
     }
     catch(error){
-        logger.error(error.message, "Encountered some error.")
+        logger.fatal(error.message, "Encountered some error.")
         res.status(400).send({error: error.message});
     }
 }
@@ -51,7 +51,7 @@ const getBooks = async (req, res) => {
         res.send({booksData, "Page Number": page + 1, "Total Pages": pageCount});
     }
     catch(error){
-        logger.error(error.message, "Some error occured.")
+        logger.fatal(error.message, "Some error occured.")
         res.status(400).send({error: "Invalid Request => " + error.message});
     }
 };
@@ -72,7 +72,7 @@ const getBookWithId = async (req, res) => {
     res.send(bookData);
     }
     catch(error){  
-        logger.error(error.message, "Some error occured.")
+        logger.fatal(error.message, "Some error occured.")
         res.status(400).send({error: error.message});
     }    
 };
@@ -91,7 +91,7 @@ const updateBookData = async (req, res) => {
         res.send(updatedData);
     }
     catch(error){
-        logger.error(error.message, "Some error encountered.")
+        logger.fatal(error.message, "Some error encountered.")
         res.status(400).send({error: error.message});
     }
 };
@@ -106,7 +106,7 @@ const deleteBookData = async (req, res) => {
         res.send("Requested Book data deleted successfully.");
     }
     catch(error){
-        logger.error("Some error encountered.")
+        logger.fatal("Some error encountered.")
         res.status(400).send({error: "Unable to delete the requested book. Kindly verify the entered details or Please try again later if the error still persists!"});
     }
 };
@@ -137,7 +137,7 @@ const buyBook = async (req, res) => {
         res.send(paymentData.body);
     }
     catch(error){
-        logger.error(error.message, "Some error encountered.")
+        logger.fatal(error.message, "Some error encountered.")
         res.status(400).send({error: error.message});
     }
 }

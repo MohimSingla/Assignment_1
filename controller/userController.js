@@ -34,7 +34,7 @@ const userLogin = async (req, res) => {
         logger.info("User logged in. Sending relevant information back with 200 status code.")
         res.status(200).send({ user });
     } catch (error) {
-        logger.error(error.message, "Sending 400 status code back to user.")
+        logger.fatal(error.message, "Sending 400 status code back to user.")
         res.status(400).send("Invalid Request!");
     }
 };
