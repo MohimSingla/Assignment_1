@@ -71,3 +71,127 @@
 [11:46:24.102] [32mINFO[39m (2748): [36mNode server up and running.[39m
 [12:04:22.658] [32mINFO[39m (40216): [36mNode server up and running.[39m
 [12:04:43.873] [32mINFO[39m (41005): [36mNode server up and running.[39m
+[15:02:02.176] [32mINFO[39m (6964): [36mNode server up and running.[39m
+[15:10:48.881] [32mINFO[39m (11572): [36mNode server up and running.[39m
+[15:11:29.211] [32mINFO[39m (11572): [36mPOST route /auth/register is accessed[39m
+[15:11:29.270] [41mFATAL[49m (11572): [36mE11000 duplicate key error collection: BookStore.users index: userName_1 dup key: { userName: "customer10@gmail.com" }[39m
+[15:11:30.006] [32mINFO[39m (11572): [36mSending 400 status code.[39m
+[15:11:30.013] [32mINFO[39m (11572): [36mrequest completed[39m
+    req: {
+      "id": 1,
+      "method": "POST",
+      "url": "/auth/register",
+      "query": {},
+      "params": {},
+      "headers": {
+        "content-type": "application/json",
+        "user-agent": "PostmanRuntime/7.32.3",
+        "accept": "*/*",
+        "postman-token": "3d3f23c8-2a72-4961-a834-4c44683eb616",
+        "host": "127.0.0.1:3000",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive",
+        "content-length": "94"
+      },
+      "remoteAddress": "::ffff:127.0.0.1",
+      "remotePort": 52884
+    }
+    res: {
+      "statusCode": 400,
+      "headers": {
+        "x-powered-by": "Express",
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "118",
+        "etag": "W/\"76-xOwGS1yEyXqItDMe1lfYCHw4w0k\""
+      }
+    }
+    responseTime: 816
+[15:12:28.314] [32mINFO[39m (11641): [36mNode server up and running.[39m
+[15:12:35.454] [32mINFO[39m (11641): [36mPOST route /auth/register is accessed[39m
+[15:13:00.532] [32mINFO[39m (11703): [36mNode server up and running.[39m
+[15:15:04.201] [32mINFO[39m (11744): [36mNode server up and running.[39m
+[15:15:11.376] [32mINFO[39m (11744): [36mPOST route /auth/register is accessed[39m
+[15:15:11.430] [41mFATAL[49m (11744): [36mE11000 duplicate key error collection: BookStore.users index: userName_1 dup key: { userName: "customer10@gmail.com" }[39m
+[15:15:12.283] [32mINFO[39m (11744): [36mSending 400 status code.[39m
+[15:15:12.292] [32mINFO[39m (11744): [36mrequest completed[39m
+    req: {
+      "id": 1,
+      "method": "POST",
+      "url": "/auth/register",
+      "query": {},
+      "params": {},
+      "headers": {
+        "content-type": "application/json",
+        "user-agent": "PostmanRuntime/7.32.3",
+        "accept": "*/*",
+        "postman-token": "eff0f59a-d8cd-48d0-9c3e-3aeb3d2a6e97",
+        "host": "127.0.0.1:3000",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive",
+        "content-length": "94"
+      },
+      "remoteAddress": "::ffff:127.0.0.1",
+      "remotePort": 52935
+    }
+    res: {
+      "statusCode": 400,
+      "headers": {
+        "x-powered-by": "Express",
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "118",
+        "etag": "W/\"76-xOwGS1yEyXqItDMe1lfYCHw4w0k\""
+      }
+    }
+    responseTime: 929
+[15:15:56.761] [32mINFO[39m (11784): [36mNode server up and running.[39m
+[15:16:06.380] [32mINFO[39m (11807): [36mNode server up and running.[39m
+[15:16:40.949] [32mINFO[39m (11829): [36mNode server up and running.[39m
+[15:16:47.962] [32mINFO[39m (11853): [36mNode server up and running.[39m
+[15:16:54.935] [32mINFO[39m (11875): [36mNode server up and running.[39m
+[15:17:01.295] [32mINFO[39m (11896): [36mNode server up and running.[39m
+[15:17:03.748] [32mINFO[39m (11956): [36mNode server up and running.[39m
+[15:17:13.648] [32mINFO[39m (12033): [36mNode server up and running.[39m
+[16:01:08.751] [32mINFO[39m (12367): [36mNode server up and running.[39m
+[16:01:16.970] [32mINFO[39m (12367): [36mPOST route /auth/register is accessed[39m
+[16:03:43.125] [32mINFO[39m (12418): [36mNode server up and running.[39m
+[16:04:30.356] [32mINFO[39m (12449): [36mNode server up and running.[39m
+[16:04:43.803] [32mINFO[39m (12477): [36mNode server up and running.[39m
+[16:05:04.287] [32mINFO[39m (12501): [36mNode server up and running.[39m
+[16:05:45.960] [32mINFO[39m (12530): [36mNode server up and running.[39m
+[00:17:12.064] [32mINFO[39m (13679): [36mNode server up and running.[39m
+[00:17:18.840] [32mINFO[39m (13679): [36mPOST route /auth/register is accessed[39m
+[00:17:18.934] [41mFATAL[49m (13679): [36mE11000 duplicate key error collection: BookStore.users index: userName_1 dup key: { userName: "customer10@gmail.com" }[39m
+[00:17:19.136] [32mINFO[39m (13679): [36mSending 400 status code.[39m
+[00:17:19.141] [32mINFO[39m (13679): [36mrequest completed[39m
+    req: {
+      "id": 1,
+      "method": "POST",
+      "url": "/auth/register",
+      "query": {},
+      "params": {},
+      "headers": {
+        "content-type": "application/json",
+        "user-agent": "PostmanRuntime/7.32.3",
+        "accept": "*/*",
+        "postman-token": "657fac3c-31b3-4ed5-b2ef-3dd587a7d5d4",
+        "host": "127.0.0.1:3000",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive",
+        "content-length": "94"
+      },
+      "remoteAddress": "::ffff:127.0.0.1",
+      "remotePort": 54729
+    }
+    res: {
+      "statusCode": 400,
+      "headers": {
+        "x-powered-by": "Express",
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "118",
+        "etag": "W/\"76-xOwGS1yEyXqItDMe1lfYCHw4w0k\""
+      }
+    }
+    responseTime: 314
+[00:18:47.606] [32mINFO[39m (13720): [36mNode server up and running.[39m
+[00:18:57.214] [32mINFO[39m (13743): [36mNode server up and running.[39m
+[00:19:22.231] [32mINFO[39m (13768): [36mNode server up and running.[39m
