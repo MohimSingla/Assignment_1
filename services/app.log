@@ -196,3 +196,47 @@
 [00:18:57.214] [32mINFO[39m (13743): [36mNode server up and running.[39m
 [00:19:22.231] [32mINFO[39m (13768): [36mNode server up and running.[39m
 [11:00:44.388] [32mINFO[39m (14195): [36mNode server up and running.[39m
+[13:05:30.494] [32mINFO[39m (16634): [36mNode server up and running.[39m
+[13:05:36.914] [32mINFO[39m (16667): [36mNode server up and running.[39m
+[13:05:40.346] [32mINFO[39m (16688): [36mNode server up and running.[39m
+[13:05:43.726] [32mINFO[39m (16709): [36mNode server up and running.[39m
+[13:05:46.588] [32mINFO[39m (16727): [36mNode server up and running.[39m
+[13:05:50.156] [32mINFO[39m (16749): [36mNode server up and running.[39m
+[13:05:59.042] [32mINFO[39m (16772): [36mNode server up and running.[39m
+[13:06:03.221] [32mINFO[39m (16793): [36mNode server up and running.[39m
+[14:09:12.271] [32mINFO[39m (19559): [36mNode server up and running.[39m
+[14:09:39.728] [32mINFO[39m (19601): [36mNode server up and running.[39m
+[14:09:42.987] [32mINFO[39m (19601): [36mPOST /books called by user.[39m
+[14:09:42.990] [31mERROR[39m (19601): [36mInvalid data entered by the user.[39m
+[14:09:42.990] [41mFATAL[49m (19601): [36mValidationError: "stock" must be greater than or equal to 0[39m
+[14:09:43.815] [32mINFO[39m (19601): [36mrequest completed[39m
+    req: {
+      "id": 1,
+      "method": "POST",
+      "url": "/books",
+      "query": {},
+      "params": {},
+      "headers": {
+        "authorizationtoken": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NGJlNzE1YjRkYzI4MjMxZjlmYzc0MDQiLCJyb2xlTmFtZSI6ImFkbWluIiwiaWF0IjoxNjkwMjAyNDU5fQ.wwZ4k48hCmjzqmiZ_D7EK7d8s4VT5Jd6pcedsubvmRE",
+        "content-type": "application/json",
+        "user-agent": "PostmanRuntime/7.32.3",
+        "accept": "*/*",
+        "postman-token": "6993de69-5113-4e14-9350-e2d6be8fa8de",
+        "host": "127.0.0.1:3000",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive",
+        "content-length": "114"
+      },
+      "remoteAddress": "::ffff:127.0.0.1",
+      "remotePort": 57418
+    }
+    res: {
+      "statusCode": 400,
+      "headers": {
+        "x-powered-by": "Express",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "73",
+        "etag": "W/\"49-U1Uq6tGo8VBU3i2v/uu43JNmNqY\""
+      }
+    }
+    responseTime: 843

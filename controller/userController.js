@@ -21,7 +21,7 @@ const registerUser = async (req, res) => {
         res.status(200).send("User Created SuccessFully!");
     }
     catch(error){
-        Sentry.captureException(error);
+        // Sentry.captureException(error);
         logger.fatal(error.message, "Internal Error");
         logger.info("Sending 400 status code.")
         res.status(400).send(error.message);
@@ -37,7 +37,7 @@ const userLogin = async (req, res) => {
         logger.info("User logged in. Sending relevant information back with 200 status code.")
         res.status(200).send({ user });
     } catch (error) {
-        Sentry.captureException(error);
+        // Sentry.captureException(error);
         logger.fatal(error.message, "Sending 400 status code back to user.")
         res.status(400).send("Invalid Request!");
     }
