@@ -1,4 +1,5 @@
 const { Book } = require('../models/model.js');
+const { Sentry } = require('../sentry/sentry.js');
 const { joiSchemaBooksValidator } = require('../validators/joiValidator.js');
 const got = require('got');
 
