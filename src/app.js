@@ -5,6 +5,9 @@ const logger = require('../services/loggerService');
 
 const app = express();
 
+const path = __dirname + "/../ui";
+app.use(express.static(path))
+
 const loggerMidleware = expressPinoLogger({
     logger: logger,
     autoLogging: true,

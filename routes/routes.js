@@ -33,4 +33,15 @@ router.delete('/books/:id', adminAuth, deleteBookData)
 // Route at GET "/buy/book/:id" allows loggedIn user to buy a book which is available in the inventory. 
 router.post('/buy/book/:id', checkUserLoginStatus, buyBook);
 
+// Ui WIP
+
+router.get('/ui/login', (req, res) => {
+    res.sendFile('/Users/mohim.singla/Documents/Assignment_1/ui/login.html')
+})
+
+router.get('/ui/books', (req, res) => {
+    res.sendFile('/Users/mohim.singla/Documents/Assignment_1/ui/books.html')
+})
+
+
 module.exports = {router};

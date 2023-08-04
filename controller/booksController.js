@@ -7,8 +7,8 @@ const logger = require('../services/loggerService');
 // Response handler which allows only the ADMIN user account to create book entries.
 // If any "customer" account tries to access the endpoint, it throws an error.
 const saveBookData = async (req, res) => {
-    logger.info("POST /books called by user.")
     try{
+        logger.info("POST /books called by user.")
         const errCheck = joiSchemaBooksValidator.validate(req.body).error;
         if(errCheck) {
             logger.error("Invalid data entered by the user.")
@@ -34,10 +34,10 @@ const saveBookData = async (req, res) => {
 // User can see the page number he/she requested and total number of pages available.
 // If page number requested by user exceeds maximum page limit: Throws an error
 const getBooks = async (req, res) => {
-    logger.info("GET /books called by user.")
-    const limit =2;
-    let page = Number(req.query.page) - 1 || 0;
     try{
+        logger.info("GET /books called by user.")
+        const limit =2;
+        let page = Number(req.query.page) - 1 || 0;
         const pageCount = Math.floor((await Book.countDocuments({}) + 1)/limit);
         if(pageCount < page + 1 )
         {
@@ -64,16 +64,16 @@ const getBooks = async (req, res) => {
 // Response handler to allow any Loged In user to view the book data with the requested ID.
 // If a user with invalid/no_JWT tries to access the data, he/she is not allowed and served with an error.
 const getBookWithId = async (req, res) => {
-    logger.info("GET /books/:id called by the user.")
     try{
-    const _id = req.params.id;
-    const bookData = await Book.findById(_id);
-    if(!bookData){
-        logger.error("Invalid/non-existing ID entered by the user.")
-        throw new Error("Book with the requested ID not found.");
-    }
-    logger.info("Sending 200 success code with relevant data.")
-    res.send(bookData);
+        logger.info("GET /books/:id called by the user.")
+        const _id = req.params.id;
+        const bookData = await Book.findById(_id);
+        if(!bookData){
+            logger.error("Invalid/non-existing ID entered by the user.")
+            throw new Error("Book with the requested ID not found.");
+        }
+        logger.info("Sending 200 success code with relevant data.")
+        res.send(bookData);
     }
     catch(error){  
         // Sentry.captureException(error);
@@ -84,8 +84,8 @@ const getBookWithId = async (req, res) => {
 
 // Response handler which allows only the ADMIN user to update book data with the requested ID.
 const updateBookData = async (req, res) => {
-    logger.info("PUT /books/:id called by the user.")
     try{
+        logger.info("PUT /books/:id called by the user.")
         const _id = req.params.id;
         const updatedData = await Book.findOneAndUpdate({_id}, req.body, { runValidators: true, new: true });
         if(!updatedData){
@@ -104,8 +104,8 @@ const updateBookData = async (req, res) => {
 
 // Response handler which allows only the ADMIN user to delete book data completely from the data base with the requested ID.
 const deleteBookData = async (req, res) => {
-    logger.info("DELETE /books/:id called by the user.")
     try{
+        logger.info("DELETE /books/:id called by the user.")
         const _id = req.params.id;
         await Book.findByIdAndDelete({_id});
         logger.info("Sending 200 status code with relevant success message to the user.")
@@ -120,8 +120,8 @@ const deleteBookData = async (req, res) => {
 
 //Response handler which allows loggedin user to purchase a book.
 const buyBook = async (req, res) => {
-    logger.info("POST /buy/book/:id called by the user.")
     try{
+        logger.info("POST /buy/book/:id called by the user.")
         const _id = req.params.id;
         const bookData = await Book.findById(_id);
         if(!bookData)

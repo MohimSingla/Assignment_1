@@ -31,8 +31,9 @@ const registerUser = async (req, res) => {
 // Response handler to allow the user to login with correct Username(Email) and password.
 // Throws 400 http status in case of mismatching credentials.
 const userLogin = async (req, res) => {
-    logger.info('POST route /auth/login is accessed')
+    console.log("called")
     try {
+        logger.info('POST route /auth/login is accessed')
         const user = await User.findByCredentials(req.body.userName, req.body.password);
         logger.info("User logged in. Sending relevant information back with 200 status code.")
         res.status(200).send({ user });
