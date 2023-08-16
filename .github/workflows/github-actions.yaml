@@ -11,5 +11,5 @@ jobs:
           node-version: '20'
       - run: echo "Starting Test"
       - run: echo "Test Complete"
-      - run: TempVar="test value"
-      - run: echo $TempVar
+      - run: ls
+      - run: pwd
