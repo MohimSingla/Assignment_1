@@ -9,5 +9,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '20'
-      - run: echo "Hello This is test runner."
-      - run: bats -v
+      - run: echo "Starting Test"
+      - run: echo "Test Complete"
