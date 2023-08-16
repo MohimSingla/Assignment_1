@@ -11,7 +11,7 @@ jobs:
           node-version: '20'
       - run: echo "Starting Test"
       - run: docker run -it -d --name mongoose -p 27017:27017 mongo
-      - run: npm install
+      - run: npm ci
       - run: node src/app.js
       - run: curl "http://localhost:3000/test"
       - run: echo "Test Complete"
