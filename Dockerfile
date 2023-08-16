@@ -4,4 +4,5 @@ WORKDIR /data
 
 COPY . /data
 
+RUN npm ci
 CMD node /data/src/app.js
