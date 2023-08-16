@@ -13,5 +13,5 @@ jobs:
       - run: docker run -it -d --name mongoose -p 27017:27017 mongo
       - run: docker build -t project .
       - run: docker run -it -d --name project -p 3000:3000 project
-      - run: docke exec -i project curl http://127.0.0.1:3000/test
+      - run: docker exec -i project curl http://127.0.0.1:3000/test
       - run: echo "Test Complete"
