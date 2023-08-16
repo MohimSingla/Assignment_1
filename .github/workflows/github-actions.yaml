@@ -10,6 +10,6 @@ jobs:
         with:
           node-version: '20'
       - run: echo "Starting Test"
+      - run: node src/app.js
+      - run: curl "http://localhost:3000/test"
       - run: echo "Test Complete"
-      - run: ls
-      - run: pwd
