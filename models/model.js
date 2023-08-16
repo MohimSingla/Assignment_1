@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 // Connecting with already running MongoDB Database.
-mongoose.connect('mongodb://127.0.0.1:27017/BookStore');
+mongoose.connect('mongodb://host.internal.docker:27017/BookStore');
 
 // Book Schema to define the structor of the Book's data.
 // Fields include: title, author, genre, price and stock.
